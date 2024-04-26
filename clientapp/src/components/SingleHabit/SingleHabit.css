@@ -1,0 +1,132 @@
+h2,
+h4 {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  text-transform: uppercase;
+}
+
+.dropdown-toggle {
+  width: 49vw;
+  border: none;
+  background-color: #564154;
+  border-radius: 10px !important;
+}
+.dropdown-toggle:hover {
+  background-color: #756674;
+}
+.dropdown-toggle:focus {
+  background-color: #756674;
+}
+
+.dropdown-menu {
+  background-color: #564154;
+}
+
+.dropdown-item {
+  color: white !important;
+}
+.dropdown-item:hover {
+  background-color: #756674;
+}
+
+.activity-title-container,
+.activity-type-container,
+.activity-colors-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 12px;
+}
+
+.activity-page {
+  padding: 20px;
+}
+
+.single-color {
+  padding: 12px !important;
+}
+
+.goal-container label {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.label-values-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.label-values-container input {
+  width: 49vw;
+  background-color: #564154;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.label-values-container input:focus {
+  background-color: #564154;
+  color: white;
+  border: none;
+  outline-color: transparent;
+}
+
+.goal-dropdowns,
+.time-range-dropdowns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.time-range-dropdowns {
+  padding: 12px;
+  margin: 0;
+}
+
+.date-form {
+  background-color: #564154;
+  color: white;
+}
+.date-form:first-of-type {
+  margin-bottom: 12px;
+}
+.date-form:focus {
+  background-color: #756674;
+  color: white;
+}
+
+.date-controls {
+  border: 2px solid #564154;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 24px;
+}
+
+.cloud {
+  width: 100px;
+  height: 100px;
+}
+
+.goal-wide-container {
+  padding: 12px;
+  border: 2px solid #564154;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.btn-submit-activity {
+  border-radius: 10px !important;
+  background-color: #564154;
+  color: white !important;
+  padding: 10% 12px;
+  width: 49vw;
+}
+.btn-submit-activity:hover {
+  background-color: #756674;
+}/*# sourceMappingURL=SingleHabit.css.map */

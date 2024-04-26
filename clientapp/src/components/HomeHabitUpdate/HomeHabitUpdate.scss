@@ -1,0 +1,71 @@
+@import "../../styles/variables";
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+.activity-outer-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 2px;
+  background: $colorSecondary;
+  flex-grow: 2;
+  max-width: 90%;
+  border-radius: $barBorderRadius;
+  height: $barHeight;
+}
+
+.activity-inner-bar {
+  padding: $innerBarPadding;
+  border-radius: $barBorderRadius;
+  height: $innerBarHeight;
+}
+.units-container,
+.habit-name {
+  color: white;
+}
+
+.units-container {
+  position: absolute;
+  gap: 2px;
+  right: 10px;
+}
+
+.adjuster {
+  width: $adjustersSize !important;
+  height: $adjustersSize !important;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.habit-name {
+  min-width: 200px;
+}
+
+.save-changes-container {
+  div {
+    padding: 10px;
+    color: white;
+    border-radius: $barBorderRadius;
+    background-color: $colorSecondary;
+    text-transform: uppercase;
+    &:hover {
+      cursor: pointer;
+      background-color: $colorSecondaryHover;
+    }
+  }
+}
+
+.btn-save-changes, .delete-p {
+  margin: 0 !important;
+  padding: 5px 10px !important;
+  color: white !important;
+}
+
+.trash{
+  height: $circleSize/10;
+  width: $circleSize/10;
+}

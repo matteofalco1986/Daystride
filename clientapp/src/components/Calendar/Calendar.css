@@ -1,0 +1,62 @@
+.circle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ffffff; /* Set circle background color */
+  border: 3px solid #564154; /* Set outer border color */
+}
+.circle:hover {
+  background-color: #564154;
+  color: white;
+}
+
+p {
+  margin: 0;
+  padding: 5px;
+}
+
+.date-to-select:hover {
+  cursor: pointer;
+}
+
+button {
+  display: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  margin: 0;
+  display: block;
+  opacity: 100%;
+  background-color: #564154;
+  width: 40px;
+}
+.carousel-control-prev span,
+.carousel-control-next span {
+  position: absolute;
+  top: 20px;
+}
+
+.carousel-item {
+  padding: 0px 45px;
+}
+
+.carousel-control-next span {
+  right: 1px;
+}
+
+.carousel-control-prev span {
+  left: 1px;
+}
+
+.selected-date {
+  border: 1px solid #564154; /* Blue border for the selected date */
+  border-radius: 30px;
+  padding: 6px;
+}/*# sourceMappingURL=Calendar.css.map */

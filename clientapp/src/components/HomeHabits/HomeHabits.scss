@@ -1,0 +1,49 @@
+@import "../../styles/variables";
+
+.habits-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+.habit-container-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 2px;
+  background: $colorSecondary;
+  width: 90vw;
+  border-radius: $barBorderRadius;
+  height: $barHeight;
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+.habit-fill-bar {
+  width: 100%;
+  padding: $innerBarPadding;
+  border-radius: $barBorderRadius;
+  height: $innerBarHeight;
+}
+.habit-text,
+.score-text {
+  color: white;
+  position: absolute;
+}
+
+.score-text {
+  right: 10px;
+  top: 10px;
+}
+
+.habit-text {
+  left: 10px;
+  top: 10px;
+}
+
+.no-habits {
+  font-weight: 700;
+}
+

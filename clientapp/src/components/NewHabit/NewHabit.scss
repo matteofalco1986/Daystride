@@ -1,0 +1,32 @@
+@import "../../styles/variables";
+
+button {
+  padding: 8px 20vw !important;
+  border-radius: 30px !important;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.btn-selected {
+    background-color: $colorSecondary;
+    border: none;
+    &:hover{
+        background-color: $colorSecondaryHover;
+    }
+}
+
+.btn-not-selected{
+  background-color: $colorSecondaryHover;
+  color: white;
+  border: none;
+  &:hover{
+    background-color: $colorSecondaryHoverLight;
+    color: black;
+  }
+}
+

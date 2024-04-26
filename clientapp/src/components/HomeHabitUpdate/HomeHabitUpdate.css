@@ -1,0 +1,69 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.activity-outer-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 2px;
+  background: #564154;
+  flex-grow: 2;
+  max-width: 90%;
+  border-radius: 10px;
+  height: 60px;
+}
+
+.activity-inner-bar {
+  padding: 10px;
+  border-radius: 10px;
+  height: 98%;
+}
+
+.units-container,
+.habit-name {
+  color: white;
+}
+
+.units-container {
+  position: absolute;
+  gap: 2px;
+  right: 10px;
+}
+
+.adjuster {
+  width: 30px !important;
+  height: 30px !important;
+}
+.adjuster:hover {
+  cursor: pointer;
+}
+
+.habit-name {
+  min-width: 200px;
+}
+
+.save-changes-container div {
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  background-color: #564154;
+  text-transform: uppercase;
+}
+.save-changes-container div:hover {
+  cursor: pointer;
+  background-color: #756674;
+}
+
+.btn-save-changes, .delete-p {
+  margin: 0 !important;
+  padding: 5px 10px !important;
+  color: white !important;
+}
+
+.trash {
+  height: 30px;
+  width: 30px;
+}/*# sourceMappingURL=HomeHabitUpdate.css.map */

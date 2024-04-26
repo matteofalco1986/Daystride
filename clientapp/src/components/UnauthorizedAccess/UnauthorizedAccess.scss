@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.go-to-login {
+    padding: $padding3;
+    background-color: $colorSecondary;
+    color: white;
+    border-radius: $barBorderRadius;
+    &:hover {
+      cursor: pointer;
+      background-color: $colorSecondaryHover;
+    }
+  }

@@ -1,0 +1,29 @@
+button {
+  padding: 8px 20vw !important;
+  border-radius: 30px !important;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.btn-selected {
+  background-color: #564154;
+  border: none;
+}
+.btn-selected:hover {
+  background-color: #756674;
+}
+
+.btn-not-selected {
+  background-color: #756674;
+  color: white;
+  border: none;
+}
+.btn-not-selected:hover {
+  background-color: #928292;
+  color: black;
+}/*# sourceMappingURL=NewHabit.css.map */

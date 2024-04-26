@@ -1,0 +1,135 @@
+@import "../../styles/variables";
+
+h2,
+h4 {
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+}
+
+h6 {
+  text-transform: uppercase;
+}
+
+.dropdown-toggle {
+  width: 49vw;
+  border: none;
+  background-color: $colorSecondary;
+  border-radius: $barBorderRadius !important;
+  &:hover {
+    background-color: $colorSecondaryHover;
+  }
+  &:focus {
+    background-color: $colorSecondaryHover;
+  }
+}
+
+.dropdown-menu {
+  background-color: $colorSecondary;
+}
+
+.dropdown-item {
+  color: white !important;
+  &:hover {
+    background-color: $colorSecondaryHover;
+  }
+}
+
+.activity-title-container,
+.activity-type-container,
+.activity-colors-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: $padding2;
+}
+
+.activity-page {
+  padding: 20px;
+}
+
+.single-color {
+  padding: $padding2 !important;
+}
+
+.goal-container {
+  label {
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+
+.label-values-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $padding2;
+  input {
+    width: 49vw;
+    background-color: $colorSecondary;
+    color: white;
+    border-radius: $barBorderRadius;
+    text-align: center;
+    &:focus {
+      background-color: $colorSecondary;
+      color: white;
+      border: none;
+      outline-color: transparent;
+    }
+  }
+}
+
+.goal-dropdowns,
+.time-range-dropdowns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $padding2;
+}
+.time-range-dropdowns {
+  padding: $padding2;
+  margin: 0;
+}
+
+.date-form {
+  background-color: $colorSecondary;
+  color: white;
+  &:first-of-type {
+    margin-bottom: $padding2;
+  }
+  &:focus {
+    background-color: $colorSecondaryHover;
+    color: white;
+  }
+}
+
+.date-controls {
+  border: 2px solid $colorSecondary;
+  border-radius: $barBorderRadius;
+  padding: $padding2;
+  margin-bottom: $padding3;
+}
+
+.cloud {
+  width: 100px;
+  height: 100px;
+}
+
+.goal-wide-container {
+  padding: $padding2;
+  border: 2px solid $colorSecondary;
+  border-radius: $barBorderRadius;
+  margin-bottom: $padding3;
+}
+
+.btn-submit-activity {
+  border-radius: $barBorderRadius !important;
+  background-color: $colorSecondary;
+  color: white !important;
+  padding: 10% $padding2;
+  width: 49vw;
+  &:hover {
+    background-color: $colorSecondaryHover;
+  }
+}

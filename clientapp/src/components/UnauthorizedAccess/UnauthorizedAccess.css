@@ -1,0 +1,10 @@
+.go-to-login {
+  padding: 24px;
+  background-color: #564154;
+  color: white;
+  border-radius: 10px;
+}
+.go-to-login:hover {
+  cursor: pointer;
+  background-color: #756674;
+}/*# sourceMappingURL=UnauthorizedAccess.css.map */
