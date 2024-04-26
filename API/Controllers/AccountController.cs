@@ -31,6 +31,21 @@ namespace API.Controllers
             return Ok(users);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<UserDto>> GetById([FromRoute] string id)
+        {
+            var user = await _userManager.FindByIdAsync(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return new UserDto
+            {
+                Email = user.Email,
+                Token = ""
+            };
+        }
+
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {

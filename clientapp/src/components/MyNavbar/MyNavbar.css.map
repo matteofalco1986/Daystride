@@ -1,1 +1,1 @@
-{"version":3,"sources":["MyNavbar.scss","MyNavbar.css"],"names":[],"mappings":"AAEA;EACE,yBAAA;ACDF","file":"MyNavbar.css"}
+{"version":3,"sources":["MyNavbar.scss","MyNavbar.css","../../styles/_variables.scss"],"names":[],"mappings":"AAEA;EACE,yBAAA;EACA,oCAAA;ACDF;ADEE;EACE,uBAAA;ACAJ;;ADIA;EACE,kBAAA;EACA,yBAAA;ACDF;ADEE;EACE,yBAAA;ACAJ;;ADIA;EACE,yBElBe;EFmBf,QAAA;ACDF","file":"MyNavbar.css"}

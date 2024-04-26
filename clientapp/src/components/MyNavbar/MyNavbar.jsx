@@ -34,6 +34,9 @@ export const MyNavbar = () => {
               <Link to="/moodcalendar" className="nav-link">
                 How do I feel
               </Link>
+              <Link to="/quotes" className="nav-link">
+                Inspire me
+              </Link>
             </div>
 
             <div className="d-flex">
@@ -47,6 +50,9 @@ export const MyNavbar = () => {
                 <>
                   <Link to="/login" className="nav-link">
                     Login
+                  </Link>
+                  <Link to="/register" className="nav-link">
+                    Register
                   </Link>
                 </>
               )}

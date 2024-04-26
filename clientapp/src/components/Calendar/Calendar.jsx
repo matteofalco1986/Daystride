@@ -83,7 +83,7 @@ const Calendar = ({ selectedDate, setSelectedDate }) => {
       {useSelector((state) => state.login.value) && (
         <div>
           <div className="text-center">
-            <h3 className="mb-3">
+            <h3 className="m-3">
               {selectedDate
                 ? selectedDate.toDateString() === currentDate.toDateString()
                   ? "Today"

@@ -72,7 +72,7 @@ export const NewHabit = () => {
             <div className="d-flex justify-content-center">
               {types?.map((type) => {
                 return type.id === typeId ? (
-                  <div key={types.id}>
+                  <div key={types.id} className="mt-3">
                     <Button
                       variant="success"
                       className="btn-selected"
@@ -83,7 +83,7 @@ export const NewHabit = () => {
                     </Button>
                   </div>
                 ) : (
-                  <div key={types.id}>
+                  <div key={types.id} className="mt-3" >
                     <Button
                       variant="light"
                       className="btn-not-selected"

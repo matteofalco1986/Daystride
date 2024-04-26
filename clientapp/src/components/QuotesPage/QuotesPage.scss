@@ -1,0 +1,17 @@
+@import "../../styles/variables";
+
+.img-spinner {
+    background-color: $colorSecondary;
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 128px;
+}
+
+.image-container {
+    height: 94.8vh;
+    background-size: cover;
+}
+
