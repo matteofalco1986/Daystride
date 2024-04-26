@@ -1,17 +1,66 @@
 @import "../../styles/variables";
 
 .img-spinner {
-    background-color: $colorSecondary;
+  background-color: $colorSecondary;
 }
 
 .spinner-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 128px;
+  display: flex;
+  justify-content: center;
+  margin-top: 128px;
 }
 
 .image-container {
-    height: 94.8vh;
-    background-size: cover;
+  height: 94.8vh;
+  background-size: cover;
+}
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
+.author-container {
+  display: flex;
+  width: 100vw;
+  padding: 0;
+  * {
+    flex-basis: 34%;
+    padding: 0;
+    margin: 0;
+  }
+}
+.quote-text,
+.quote-author {
+  color: $textColorLight;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: fantasy;
+  padding: $padding3 64px;
+
+  // border-radius: calc($barBorderRadius + 12px);
+}
+
+.quote-text-container {
+  display: flex;
+  margin-top: 35vh;
+  width: 100vw;
+  background-color: $colorFour2;
+  p {
+    flex-basis: 10%;
+    padding: 0;
+    &:nth-child(2) {
+      text-align: center;
+      flex-grow: 2;
+      flex-basis: 80%;
+      padding: $padding3 64px;
+    }
+  }
+}
+.quote-author {
+  margin: 0;
+  padding: 0 0 $padding3 0;
+  font-size: 1rem;
+  background-color: $colorFour2;
+}

@@ -11,4 +11,55 @@
 .image-container {
   height: 94.8vh;
   background-size: cover;
+}
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.author-container {
+  display: flex;
+  width: 100vw;
+  padding: 0;
+}
+.author-container * {
+  flex-basis: 34%;
+  padding: 0;
+  margin: 0;
+}
+
+.quote-text,
+.quote-author {
+  color: rgb(197, 197, 197);
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: fantasy;
+  padding: 24px 64px;
+}
+
+.quote-text-container {
+  display: flex;
+  margin-top: 35vh;
+  width: 100vw;
+  background-color: rgba(123, 87, 78, 0.8549019608);
+}
+.quote-text-container p {
+  flex-basis: 10%;
+  padding: 0;
+}
+.quote-text-container p:nth-child(2) {
+  text-align: center;
+  flex-grow: 2;
+  flex-basis: 80%;
+  padding: 24px 64px;
+}
+
+.quote-author {
+  margin: 0;
+  padding: 0 0 24px 0;
+  font-size: 1rem;
+  background-color: rgba(123, 87, 78, 0.8549019608);
 }/*# sourceMappingURL=QuotesPage.css.map */

@@ -1,1 +1,1 @@
-{"version":3,"sources":["UnauthorizedAccess.scss","../../styles/_variables.scss","UnauthorizedAccess.css"],"names":[],"mappings":"AAEA;EACI,aCeO;EDdP,yBCHa;EDIb,YAAA;EACA,mBCIc;ACLlB;AFEI;EACE,eAAA;EACA,yBCPgB;ACOtB","file":"UnauthorizedAccess.css"}
+{"version":3,"sources":["UnauthorizedAccess.scss","../../styles/_variables.scss","UnauthorizedAccess.css"],"names":[],"mappings":"AAEA;EACI,aCiBO;EDhBP,yBCHa;EDIb,YAAA;EACA,mBCMc;ACPlB;AFEI;EACE,eAAA;EACA,yBCPgB;ACOtB","file":"UnauthorizedAccess.css"}

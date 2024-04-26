@@ -91,10 +91,23 @@ export const QuotesPage = () => {
     }
   };
 
-  const GetQuotes = async () => {};
+  const GetQuotes = async () => {
+    try {
+      const res = await fetch(ZenQuotesEndpoint);
+      if (!res.ok) {
+        throw new Error("Failed fetching quotes");
+      }
+      const data = await res.json();
+      setQuotes(data);
+      console.log(data);
+    } catch (err) {
+      console.error("Error: ", err);
+    }
+  };
 
   useEffect(() => {
     GetBgPicture(chosenSubject);
+    GetQuotes();
   }, []);
 
   return (
@@ -109,7 +122,26 @@ export const QuotesPage = () => {
           style={{
             backgroundImage: `url(${pictures[chosenPicture]?.src.landscape})`,
           }}
-        ></div>
+        >
+          <div className="quote-container">
+            <div className="quote-text-container">
+              <p className="quote-text">
+              </p>
+              <p className="quote-text">
+                {quotes[Math.floor(Math.random() * quotes.length)]?.text}
+              </p>
+              <p className="quote-text">
+              </p>
+            </div>
+          </div>
+          <div className="author-container">
+            <p className="m-0 quote-author"></p>
+            <p className="m-0 quote-author"></p>
+            <p className="quote-author">
+              {quotes[Math.floor(Math.random() * quotes.length)]?.author}
+            </p>
+          </div>
+        </div>
       )}
     </>
   );
