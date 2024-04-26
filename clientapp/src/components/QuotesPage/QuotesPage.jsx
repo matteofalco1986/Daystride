@@ -60,6 +60,11 @@ const subjects = [
 
 let chosenPicture = Math.floor(Math.random() * 15);
 let chosenSubject = subjects[Math.floor(Math.random() * subjects.length)];
+const shortenString = (str) => {
+  if (str !== undefined) {
+    return str.substring(0, str.length - 10);
+  }
+};
 
 export const QuotesPage = () => {
   const [pictures, setPictures] = useState("");
@@ -125,20 +130,21 @@ export const QuotesPage = () => {
         >
           <div className="quote-container">
             <div className="quote-text-container">
-              <p className="quote-text">
-              </p>
+              <p className="quote-text"></p>
               <p className="quote-text">
                 {quotes[Math.floor(Math.random() * quotes.length)]?.text}
               </p>
-              <p className="quote-text">
-              </p>
+              <p className="quote-text"></p>
             </div>
           </div>
           <div className="author-container">
             <p className="m-0 quote-author"></p>
             <p className="m-0 quote-author"></p>
             <p className="quote-author">
-              {quotes[Math.floor(Math.random() * quotes.length)]?.author}
+              {shortenString(
+                quotes[Math.floor(Math.random() * quotes.length)]?.author
+              )}
+              .
             </p>
           </div>
         </div>
