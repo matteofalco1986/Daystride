@@ -20,15 +20,12 @@ const subjects = [
   "Adventure",
   "Culture",
   "People",
-  "Abstract",
-  "Music",
   "Love",
   "Celebration",
   "Vintage",
   "Art",
   "Wellness",
   "Fantasy",
-  "Travel",
   "History",
   "Seasons",
   "Meditation",
@@ -44,18 +41,13 @@ const subjects = [
   "Spirituality",
   "Reflection",
   "Breathe",
-  "Silence",
   "Serenity",
-  "Balance",
   "Gratitude",
   "Solitude",
-  "Renewal",
   "Garden",
   "Waterfall",
   "Sunrise",
   "Moonlight",
-  "Starry",
-  "Dream",
 ];
 
 let chosenPicture = Math.floor(Math.random() * 15);
@@ -144,7 +136,6 @@ export const QuotesPage = () => {
               {shortenString(
                 quotes[Math.floor(Math.random() * quotes.length)]?.author
               )}
-              .
             </p>
           </div>
         </div>
