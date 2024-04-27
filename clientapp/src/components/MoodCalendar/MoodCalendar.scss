@@ -1,0 +1,78 @@
+@import "../../styles/variables";
+
+.calendar-container {
+  padding: $padding3;
+}
+
+.fc-toolbar {
+  flex-direction: column;
+  justify-items: center !important;
+}
+
+.fc-toolbar-chunk {
+  display: flex;
+  margin-bottom: $padding2;
+  justify-content: space-between !important;
+  gap: 25vw;
+  align-items: center;
+}
+
+.fc-button {
+  background-color: $colorSecondary !important;
+  border: none !important;
+  &:hover {
+    background-color: $colorSecondaryHover !important;
+    cursor: pointer !important;
+  }
+  border-radius: $barBorderRadius !important;
+}
+
+.fc-today-button {
+  padding: 12px 128px !important;
+  text-transform: uppercase !important;
+}
+
+.fc-button-group {
+  gap: 10px;
+  .fc-button {
+    padding: 12px 32px !important;
+  }
+}
+
+.fc-event-title-container {
+  text-align: center;
+  background-color: $colorFour;
+  border-color: transparent !important;
+  text-transform: uppercase;
+  padding: 12px 0;
+}
+
+.emoji-container {
+  padding: 30px 12px;
+}
+
+.modal-content {
+    background-color: $colorFour2;
+    height: 300px;
+}
+.modal-title {
+    margin-top: 48px;
+    margin-bottom: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    color: $textColorLight;
+    font-size: 2rem;
+}
+.emoji {
+    width: 50px;
+    height: 50px;
+    color: $textColorLight;
+    &:hover {
+        cursor: pointer;
+        color: white;
+    }
+}
+
+.modal-dialog{
+    margin-top: 24vh;
+}

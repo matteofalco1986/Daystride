@@ -1,1 +1,78 @@
-/*# sourceMappingURL=MoodCalendar.css.map */
+.calendar-container {
+  padding: 24px;
+}
+
+.fc-toolbar {
+  flex-direction: column;
+  justify-items: center !important;
+}
+
+.fc-toolbar-chunk {
+  display: flex;
+  margin-bottom: 12px;
+  justify-content: space-between !important;
+  gap: 25vw;
+  align-items: center;
+}
+
+.fc-button {
+  background-color: #564154 !important;
+  border: none !important;
+  border-radius: 10px !important;
+}
+.fc-button:hover {
+  background-color: #756674 !important;
+  cursor: pointer !important;
+}
+
+.fc-today-button {
+  padding: 12px 128px !important;
+  text-transform: uppercase !important;
+}
+
+.fc-button-group {
+  gap: 10px;
+}
+.fc-button-group .fc-button {
+  padding: 12px 32px !important;
+}
+
+.fc-event-title-container {
+  text-align: center;
+  background-color: #FF6542;
+  border-color: transparent !important;
+  text-transform: uppercase;
+  padding: 12px 0;
+}
+
+.emoji-container {
+  padding: 30px 12px;
+}
+
+.modal-content {
+  background-color: rgba(123, 87, 78, 0.8549019608);
+  height: 300px;
+}
+
+.modal-title {
+  margin-top: 48px;
+  margin-bottom: 24px;
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(197, 197, 197);
+  font-size: 2rem;
+}
+
+.emoji {
+  width: 50px;
+  height: 50px;
+  color: rgb(197, 197, 197);
+}
+.emoji:hover {
+  cursor: pointer;
+  color: white;
+}
+
+.modal-dialog {
+  margin-top: 24vh;
+}/*# sourceMappingURL=MoodCalendar.css.map */

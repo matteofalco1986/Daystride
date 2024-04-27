@@ -32,6 +32,7 @@ public partial class DayStrideContext : IdentityDbContext<User>
     public virtual DbSet<GoalPeriodType> GoalPeriodTypes { get; set; }
 
     public virtual DbSet<Mood> Moods { get; set; }
+    public virtual DbSet<MoodEvent> MoodEvents { get; set; }
 
     public virtual DbSet<TimeRange> TimeRanges { get; set; }
 
@@ -55,6 +56,7 @@ public partial class DayStrideContext : IdentityDbContext<User>
                 new IdentityRole { Name = "Admin", NormalizedName = "ADMIN" }
             );
         });
+
         modelBuilder.Entity<Activity>(entity =>
         {
             entity.Property(e => e.ActivityName).HasMaxLength(50);
@@ -116,6 +118,12 @@ public partial class DayStrideContext : IdentityDbContext<User>
         {
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.MoodName).HasMaxLength(20);
+        });
+        modelBuilder.Entity<MoodEvent>(entity =>
+        {
+            entity.HasOne(m => m.Mood).WithMany(e => e.MoodEvents)
+                .HasForeignKey(m => m.MoodId)
+                .HasConstraintName("FK_MoodEvents_Moods");
         });
 
         modelBuilder.Entity<TimeRange>(entity =>
