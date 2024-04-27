@@ -17,17 +17,22 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { useState, useEffect } from "react";
 import { Endpoint } from "../../data/data";
-import { Modal, Button } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { UnauthorizedAccess } from "../UnauthorizedAccess/UnauthorizedAccess";
+import { useSelector } from "react-redux";
 
 export const MoodCalendar = () => {
+  const navigate = useNavigate();
   const [selectedDate, setSelectedDate] = useState("");
   const [moods, setMoods] = useState([]);
   const [events, setEvents] = useState([]);
   const [show, setShow] = useState(false);
-  const [moodId, setMoodId] = useState("");
 
   const handleClose = () => {
+    GetMoodEvents();
     setShow(false);
+    window.location.reload();
   };
   const handleShow = () => setShow(true);
 
@@ -39,7 +44,14 @@ export const MoodCalendar = () => {
 
   const GetMoodEvents = async () => {
     try {
-      const res = await fetch(`${Endpoint}/api/moodevents`);
+      const res = await fetch(`${Endpoint}/api/moodevents`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("AuthToken")}`,
+        },
+      });
+      if (res.status === 401) {
+        return;
+      }
       if (!res.ok) {
         throw new Error("Failed to retrieve mood events");
       }
@@ -48,6 +60,31 @@ export const MoodCalendar = () => {
       console.log(data);
     } catch (err) {
       console.error("Error: ", err);
+    }
+  };
+
+  const CreateMoodEvent = async (url, data) => {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("AuthToken")}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.status === 401) {
+        return;
+      }
+      if (!res.ok) {
+        throw new Error("Failed to Create MoodEvent");
+      }
+
+      const resData = await res.json();
+      // setCreatedData(resData);
+      console.log("Mood event created");
+    } catch (err) {
+      console.error("Error while making POST request:", err);
     }
   };
 
@@ -72,69 +109,105 @@ export const MoodCalendar = () => {
     setEvents(generatedEvents);
   }, [moods]);
   return (
-    <div className="calendar-container">
-      <FullCalendar
-        plugins={[dayGridPlugin, interactionPlugin]}
-        initialView="dayGridMonth"
-        events={events}
-        dateClick={handleDateClick}
-      />
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
-          <Modal.Title>How do you feel?</Modal.Title>
-          <div className="d-flex justify-content-between emoji-container">
-            <EmojiAngryFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(7);
-                handleClose();
-              }}
+    <>
+      {useSelector((state) => state.login.value) ? (
+        <>
+          <div className="calendar-container">
+            <FullCalendar
+              plugins={[dayGridPlugin, interactionPlugin]}
+              initialView="dayGridMonth"
+              events={events}
+              dateClick={handleDateClick}
             />
-            <EmojiTearFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(5);
-                handleClose();
-              }}
-            />
-            <EmojiFrownFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(6);
-                handleClose();
-              }}
-            />
-            <EmojiNeutralFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(4);
-                handleClose();
-              }}
-            />
-            <EmojiSmileFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(3);
-                handleClose();
-              }}
-            />
-            <EmojiLaughingFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(2);
-                handleClose();
-              }}
-            />
-            <EmojiGrinFill
-              className="emoji"
-              onClick={() => {
-                setMoodId(1);
-                handleClose();
-              }}
-            />
+            <Modal show={show} onHide={handleClose}>
+              <Modal.Body>
+                <Modal.Title>How do you feel?</Modal.Title>
+                <div className="d-flex justify-content-between emoji-container">
+                  <EmojiAngryFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 7,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiTearFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 5,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiFrownFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 6,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiNeutralFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 4,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiSmileFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 3,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiLaughingFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 2,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                  <EmojiGrinFill
+                    className="emoji"
+                    onClick={() => {
+                      CreateMoodEvent(`${Endpoint}/api/moodevents`, {
+                        userId: 1,
+                        moodId: 1,
+                        date: selectedDate,
+                      });
+                      handleClose();
+                    }}
+                  />
+                </div>
+              </Modal.Body>
+            </Modal>
           </div>
-        </Modal.Body>
-      </Modal>
-    </div>
+        </>
+      ) : (
+        <UnauthorizedAccess />
+      )}
+    </>
   );
 };

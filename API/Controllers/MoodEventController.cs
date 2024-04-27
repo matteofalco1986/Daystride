@@ -7,12 +7,16 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Identity.Client;
+using API.Dtos.MoodEvent;
+using API.Mappers;
+
 
 namespace API.Controllers
 {
     [EnableCors("AllowOriginPolicy")]
     [ApiController]
-    [Route("api/")]
+    [Route("api/moodevents")]
     public class MoodEventController : ControllerBase
     {
         private readonly DayStrideContext _context;
@@ -21,7 +25,8 @@ namespace API.Controllers
             _context = context;
         }
 
-        [HttpGet("moodevents")]
+        [Authorize]
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var query = from me in _context.MoodEvents
@@ -42,5 +47,51 @@ namespace API.Controllers
             return Ok(moodEvents);
 
         }
+
+        [Authorize]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById([FromRoute] int id)
+        {
+            var moodEvent = await _context.MoodEvents.FindAsync(id);
+            if (moodEvent == null)
+            {
+                return NotFound();
+            }
+            return Ok(moodEvent.ToMoodEventDto());
+        }
+
+        [Authorize]
+        [HttpPost]
+        public async Task<IActionResult> Add([FromBody] CreateMoodEventDto moodEventDto)
+        {
+            var moodEventModel = moodEventDto.ToMoodEventFromCreateMoodEventDto();
+            await _context.MoodEvents.AddAsync(moodEventModel);
+            await _context.SaveChangesAsync();
+            return CreatedAtAction(nameof(GetById), new { id = moodEventModel.Id }, moodEventModel.ToMoodEventDto());
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<IActionResult> Update([FromRoute] int id, [FromBody] UpdateMoodEventDto moodEventDto)
+        {
+
+
+            var moodEventModel = await _context.MoodEvents.FirstOrDefaultAsync(moodEvent => moodEvent.Id == id);
+            if (moodEventModel == null)
+            {
+                return NotFound();
+            }
+
+            moodEventModel.UserId = moodEventDto.UserId;
+            moodEventModel.MoodId = moodEventDto.MoodId;
+            moodEventModel.Date = moodEventDto.Date;
+
+
+            await _context.SaveChangesAsync();
+
+            return Ok(moodEventModel.ToMoodEventDto());
+        }
+
     }
 }
