@@ -2,9 +2,10 @@ DAYSTRIDE ISTRUZIONI PER USO E INSTALLAZIONE
 
 Daystride è una webapp che permette di tracciare la propria attività giornaliera e il proprio umore.
 Daystride si compone di:
-    - Frontend sviluppato in REACT, contenuto nella cartella "./clientapp/"
-    - Backend sviluppato in .net CORE come webapi, contenuto nella cartella "./API/"
-    - Database SQL Server
+
+-   Frontend sviluppato in REACT, contenuto nella cartella "./clientapp/"
+-   Backend sviluppato in .net CORE come webapi, contenuto nella cartella "./API/"
+-   Database SQL Server
 
 Per poter avviare la app sulla propria macchina, vanno seguiti i seguenti passaggi.
 
