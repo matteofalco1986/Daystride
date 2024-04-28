@@ -55,8 +55,8 @@ La registrazione è gestita tramite le proprietà che la classe IdentityUser di 
 
 Username e password validi per il login sono:
 
-Username: admin
-Password: Pa$$w0rd
+-   Username: admin
+-   Password: Pa$$w0rd
 
 
 La sezione INSPIRE ME
