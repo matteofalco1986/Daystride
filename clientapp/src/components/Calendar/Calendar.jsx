@@ -59,7 +59,7 @@ const chunkArray = (array, chunkSize) => {
 // ------------------------------------- FUNCTIONAL COMPONENT ----------------------------------
 
 const Calendar = ({ selectedDate, setSelectedDate }) => {
-  const datesInChunks = chunkArray(allDatesBetweenDate1AndDate2, 14);
+  const datesInChunks = chunkArray(allDatesBetweenDate1AndDate2, 9);
   const navigate = useNavigate();
 
   // Find the index of the chunk that includes today's date

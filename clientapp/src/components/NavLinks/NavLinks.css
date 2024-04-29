@@ -1,0 +1,120 @@
+.nav-link-no-boot {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-link-no-boot li {
+  margin: 1rem;
+}
+
+.nav-link-no-boot a {
+  border: 1px solid transparent;
+  color: #292929;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.nav-link-no-boot a:hover,
+.nav-link-no-boot a:active,
+.nav-link-no-boot a.active {
+  background: #f8df00;
+  border-color: #292929;
+  color: #292929;
+}
+
+.nav-link-no-boot button {
+  cursor: pointer;
+  border: 1px solid #292929;
+  color: #292929;
+  background: transparent;
+  padding: 0.5rem;
+  font: inherit;
+}
+
+.nav-link-no-boot button:focus {
+  outline: none;
+}
+
+.nav-link-no-boot button:hover,
+.nav-link-no-boot button:active {
+  background: #292929;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.nav-links li {
+  margin-bottom: 24px;
+  font-size: 1.2rem;
+  font-family: "Roboto Slab", serif;
+  list-style: none;
+  text-transform: uppercase;
+}
+.nav-links li:nth-child(1) {
+  margin-top: 96px;
+}
+.nav-links li .nav-link-no-boot {
+  color: rgb(197, 197, 197) !important;
+}
+.nav-links li .nav-link-no-boot:hover {
+  color: white !important;
+}
+.nav-links li .active {
+  color: white !important;
+}
+
+@media (min-width: 768px) {
+  .nav-link-no-boot {
+    flex-direction: row;
+  }
+  .nav-link-no-boot li {
+    margin: 0 0.5rem;
+  }
+  .nav-link-no-boot a {
+    color: white;
+    text-decoration: none;
+  }
+  .nav-link-no-boot button {
+    border: 1px solid white;
+    color: white;
+    background: transparent;
+  }
+  .nav-link-no-boot button:hover,
+  .nav-link-no-boot button:active {
+    background: #f8df00;
+    color: #292929;
+  }
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  .nav-links li {
+    font-family: "Roboto Slab", serif;
+    list-style: none;
+    text-transform: uppercase;
+  }
+  .nav-links li:nth-child(1) {
+    margin-top: 0px;
+  }
+  .nav-links li .nav-link-no-boot {
+    color: rgb(197, 197, 197) !important;
+  }
+  .nav-links li .nav-link-no-boot:hover {
+    color: white !important;
+  }
+  .nav-links li .active {
+    color: white !important;
+  }
+}/*# sourceMappingURL=NavLinks.css.map */
