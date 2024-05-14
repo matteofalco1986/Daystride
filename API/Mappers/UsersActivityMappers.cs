@@ -1,11 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
+
 using Daystride.Models;
-using Daystride.Dtos;
-using Microsoft.Extensions.Configuration.UserSecrets;
 using Daystride.Dtos.UsersActivity;
 
 namespace Daystride.Mappers

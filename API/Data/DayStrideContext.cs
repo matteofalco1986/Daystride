@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using API.Models;
+﻿using API.Models;
 using Daystride.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

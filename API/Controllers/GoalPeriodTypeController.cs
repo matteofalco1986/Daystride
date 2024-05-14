@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Daystride.Data;
 using Microsoft.AspNetCore.Mvc;
 using Daystride.Mappers;
-using Daystride.Dtos.GoalPeriodType;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 

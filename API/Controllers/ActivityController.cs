@@ -1,14 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Threading.Tasks;
 using Daystride.Data;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Daystride.Mappers;
-using Daystride.DTOs;
 using Daystride.Models;
 using Daystride.Dtos.Activity;
 using Microsoft.AspNetCore.Cors;

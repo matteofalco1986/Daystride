@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Daystride.Mappers;
@@ -10,8 +6,7 @@ using Microsoft.AspNetCore.Cors;
 using Daystride.Data;
 using Microsoft.AspNetCore.Authorization;
 using Daystride.Dtos.UsersActivity;
-using Microsoft.AspNetCore.Antiforgery;
-using Microsoft.Extensions.DependencyInjection;
+
 
 // Your controller code...
 
