@@ -1,82 +1,63 @@
-DAYSTRIDE ISTRUZIONI PER USO E INSTALLAZIONE
+DAYSTRIDE USER AND INSTALLATION GUIDE
+Daystride is a web app that allows you to track your daily activity and mood. Daystride is composed of:
 
-Daystride è una webapp che permette di tracciare la propria attività giornaliera e il proprio umore.
-Daystride si compone di:
+-    Frontend: Developed in REACT, located in the "./clientapp/" folder.
+-    Backend: Developed in .NET CORE as a web API, located in the "./API/" folder.
+-    SQL Server Database
 
--   Frontend sviluppato in REACT, contenuto nella cartella "./clientapp/"
--   Backend sviluppato in .net CORE come webapi, contenuto nella cartella "./API/"
--   Database SQL Server
+To run the app on your machine, follow these steps.
 
-Per poter avviare la app sulla propria macchina, vanno seguiti i seguenti passaggi.
+1.    DOWNLOAD THE APP
 
-1. SCARICARE LA APP
-
-La app si può scaricare clonando la repository dove è caricata con il comando:
-
+You can download the app by cloning the repository with the command:
 git clone https://github.com/matteofalco1986/Daystride.git
 
-2. CREARE IL DATABASE
+2.    CREATE THE DATABASE
+The database will be created using the query contained in the "DaystrideDbInitializationQuery.sql" file.
 
-Il database sarà creato attraverso la quert contenuta nel file "DaystrideDbInitializationQuery.sql"
+-    Open the "DaystrideDbInitializationQuery.sql" file located in the project's root.
+-    Execute the query.
 
--   Aprire il file "DaystrideDbInitializationQuery.sql" presente nella root del progetto.
--   Eseguire la query.
+If an error occurs, it is likely that the path for creating the database on lines 7 and 9 of the query does not match the SQL Server engine installed. If this happens, try replacing the path in the query with the one for the currently installed system. The names of the DB and log should remain "DayStride.mdf" and "DayStride_log.ldf."
 
-In caso di errore, è probabile che la path per la creazione del database a riga 7 e 9 della query non corrisponda con quella dell'engine di SQL Server installato. In caso di errore, provare a rimpiazzare la path nella query con quella del sistema installato correntemente. Il nome del Db e del log vanno mantenuti a "DayStride.mdf" e "DayStride_log.ldf"
+3.    REPLACE THE CONNECTION STRING
 
-3. RIMPIAZZARE LA STRINGA DI CONNESSIONE
+Replace the connection string in the following files:
 
-Rimpiazzare la connectionstring nei files:
-
--   /API/appsettings.json - Line 10
--   /API/Data/DayStrideContext.cs - Line 47
-
-La app si interfacca al Database tramite SQL Server Authentication, essendo stata sviluppata su MacOS con SQL Server in Docker. Se si vuole mantenere la procedura di connessione, è sufficiente aggiornare l'IP del server con l'IP della propria macchina.
-In caso si voglia utilizzare l'opzione "Windows Authentication" (preferibile per lo sviluppo in locale su PC), la connection string va rimpiazzata con la seguente:
-
+-    /API/appsettings.json - Line 10
+-    /API/Data/DayStrideContext.cs - Line 47
+  
+The app interfaces with the database via SQL Server Authentication, having been developed on MacOS with SQL Server in Docker. To maintain this connection method, simply update the server IP with your machine's IP. If you prefer to use "Windows Authentication" (recommended for local development on PC), replace the connection string with the following:
 "Server=localhost;Database=DayStride;Encrypt=True;Trusted_Connection=True;TrustServerCertificate=True;"
 
-4. INSTALLARE I PACCHETTI PER IL LATO CLIENT
+4.    INSTALL CLIENT-SIDE PACKAGES
 
--   Assicurarsi che NodeJs sia installato sulla macchina
--   Da terminale, navigare dentro la cartella "./clientapp/"
--   Eseguire il seguente comando:
-    -   npm install @fullcalendar/bootstrap5 @fullcalendar/core @fullcalendar/daygrid @fullcalendar/interaction @fullcalendar/react @reduxjs/toolkit axios bootstrap bootstrap-icons date-fns react-bootstrap react-bootstrap-icons react-icons react-redux react-router-dom
+-    Ensure NodeJs is installed on your machine.
+-    From the terminal, navigate to the "./clientapp/" folder.
+-    Run the following command:
+    -    npm install @fullcalendar/bootstrap5 @fullcalendar/core @fullcalendar/daygrid @fullcalendar/interaction @fullcalendar/react @reduxjs/toolkit axios bootstrap bootstrap-icons date-fns react-bootstrap react-bootstrap-icons react-icons react-redux react-router-dom
 
+ONCE THE APP IS RUNNING
 
+Most of the app's functionalities are accessible only after login and/or registration. Authentication is managed by generating a JWT token from the server. By default, the token is saved in the browser's local storage, from which the frontend part of the app reads it. The server verifies the presence of the token in the client's request header and validates it, authorizing access to the pages.
+Registration is managed using the properties provided by the IdentityUser class in .NET Core, which means passwords are hashed and not recognizable by looking at the database.
 
+Valid username and password for login are:
+-    Username: admin
+-    Password: Pa$$w0rd
 
+THE "INSPIRE ME" SECTION
+The Inspire Me section includes quotes and relaxing backgrounds. The app uses an external API for quotes and images.
 
-UNA VOLTA AVVIATA LA APP
+-    Image API: Pexels (https://www.pexels.com/api/)
+  
+Authentication requires a token to be included in the request header. If the token expires or doesn't work, visit https://www.pexels.com/api/new/ to get a new token and use it to replace the one saved in the PexelsToken constant in /clientapp/src/data/data.js.
 
-La maggiorparte delle funzionalità della app sono accessibili solo previo login e/o registrazione. L'autenticazione viene gestita tramite generazione di un token JWT da parte del server. Di default, il token viene salvato nel localstorage del browser, da cui la parte frontend della app lo legge. Il server verifica la presenza del token nell'header delle request del client e lo valida, autorizzando l'accesso alle pagine.
+START THE APP VIA TERMINAL
+Start the Server
+-    Navigate to the /Daystride/API/ folder.
+-    Type dotnet run or dotnet watch --no-hot-reload
 
-La registrazione è gestita tramite le proprietà che la classe IdentityUser di .net Core mette a disposizione, il che significa che le password sono "hashed" e quindi non riconoscibili guardando nel Database.
-
-Username e password validi per il login sono:
-
--   Username: admin
--   Password: Pa$$w0rd
-
-
-La sezione INSPIRE ME
-
-La sezione Inspire me include citazioni e sfondi rilassanti. La app si appoggia a due api esterne per dati riguardanti citazioni e immagini.
-
-La API per le immagini è Pexels (vedi https://www.pexels.com/api/)
-
-L'autenticazione prevede un token da includere nell'header della request. In caso di token scaduto o non funzionante, andare su https://www.pexels.com/api/new/ per avere un nuovo token e usarlo per rimpiazzare quello salvato nella costante PexelsToken in /clientapp/src/data/data.js.
-
-
-AVVIARE LA APP VIA TERMINALE
-
-Avviare il server
-
--   Navigare alla cartella /Daystride/API/
--   Digitare "dotnet run" o "dotnet watch --no-hot-reload"
-
-Avviare il client
-
--   Navigare alla cartella /Daystride/clientapp/
--   Digitare "npm start"
-
+Start the Client
+-    Navigate to the /Daystride/clientapp/ folder.
+-    Type npm start
